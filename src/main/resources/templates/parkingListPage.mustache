@@ -1,0 +1,262 @@
+{{>layouts/header}}
+
+<table class="table table-striped-columns">
+    <thead>
+    <tr>
+        <th scope="col">주차장 코드</th>
+        <th scope="col">주차장</th>
+        <th scope="col">주소</th>
+        <th scope="col">주차장 종류</th>
+        <th scope="col">운영구분</th>
+        <th scope="col">전화번호</th>
+        <th scope="col">주차현황 정보 제공여부</th>
+        <th scope="col">총 주차면</th>
+        <th scope="col">유,무료 구분</th>
+        <th scope="col">야간 무료 개방 여부</th>
+        <th scope="col">평일 운영 시작 시각</th>
+        <th scope="col">평일 운영 종료 시각</th>
+        <th scope="col">주말 운영 시작 시각</th>
+        <th scope="col">주말 운영 종료 시각</th>
+        <th scope="col">공휴일 운영 시작 시각</th>
+        <th scope="col">공휴일 운영 종료 시각</th>
+        <th scope="col">최종 데이터 동기화 시간</th>
+        <th scope="col">토요일 유무료 구분</th>
+        <th scope="col">공휴일 유무료 구분</th>
+        <th scope="col">월 정기권 금액</th>
+        <th scope="col">노상 주차장 관리 그룹 번호</th>
+        <th scope="col">기본 주차 요금</th>
+        <th scope="col">토기본 주차 시간(분 단위)</th>
+        <th scope="col">추가 단위 요금</th>
+        <th scope="col">추가 단위 시간(분 단위)</th>
+        <th scope="col">일 최대 요금</th>
+        <th scope="col">위도</th>
+        <th scope="col">경도</th>
+    </tr>
+    </thead>
+    <tbody>
+    {{#data}}
+        <tr>
+            <!-- Primary key라 무조건 값 있음-->
+            <td>{{code}}</td>
+            <td>
+                {{#name}}
+                    {{.}}
+                {{/name}}
+                {{^name}}
+                    null
+                {{/name}}
+            </td>
+            <td>
+                {{#address}}
+                    {{.}}
+                {{/address}}
+                {{^address}}
+                    null
+                {{/address}}
+            </td>
+            <td>
+                {{#type}}
+                    {{.}}
+                {{/type}}
+                {{^type}}
+                    null
+                {{/type}}
+            </td>
+            <td>
+                {{#operateClassification}}
+                    {{.}}
+                {{/operateClassification}}
+                {{^operateClassification}}
+                    null
+                {{/operateClassification}}
+            </td>
+            <td>
+                {{#phoneNumber}}
+                    {{.}}
+                {{/phoneNumber}}
+                {{^phoneNumber}}
+                    null
+                {{/phoneNumber}}
+            </td>
+            <td>
+                {{#syncState}}
+                    {{.}}
+                {{/syncState}}
+                {{^syncState}}
+                    null
+                {{/syncState}}
+            </td>
+            <td>
+                {{#totalParkingSpot}}
+                    {{.}}
+                {{/totalParkingSpot}}
+                {{^totalParkingSpot}}
+                    null
+                {{/totalParkingSpot}}
+            </td>
+            <td>
+                {{#paidOrFree}}
+                    {{.}}
+                {{/paidOrFree}}
+                {{^paidOrFree}}
+                    null
+                {{/paidOrFree}}
+            </td>
+            <td>
+                {{#nightOpen}}
+                    {{.}}
+                {{/nightOpen}}
+                {{^nightOpen}}
+                    null
+                {{/nightOpen}}
+            </td>
+            <td>
+                {{#openWeekdayTime}}
+                    {{.}}
+                {{/openWeekdayTime}}
+                {{^openWeekdayTime}}
+                    null
+                {{/openWeekdayTime}}
+            </td>
+            <td>
+                {{#closeWeekdayTime}}
+                    {{.}}
+                {{/closeWeekdayTime}}
+                {{^closeWeekdayTime}}
+                    null
+                {{/closeWeekdayTime}}
+            </td>
+            <td>
+                {{#openWeekendTime}}
+                    {{.}}
+                {{/openWeekendTime}}
+                {{^openWeekendTime}}
+                    null
+                {{/openWeekendTime}}
+            </td>
+            <td>
+                {{#closeWeekendTime}}
+                    {{.}}
+                {{/closeWeekendTime}}
+                {{^closeWeekendTime}}
+                    null
+                {{/closeWeekendTime}}
+            </td>
+            <td>
+                {{#openHolidayTime}}
+                    {{.}}
+                {{/openHolidayTime}}
+                {{^openHolidayTime}}
+                    null
+                {{/openHolidayTime}}
+            </td>
+            <td>
+                {{#closeHolidayTime}}
+                    {{.}}
+                {{/closeHolidayTime}}
+                {{^closeHolidayTime}}
+                    null
+                {{/closeHolidayTime}}
+            </td>
+            <td>
+                {{#lastSyncTime}}
+                    {{.}}
+                {{/lastSyncTime}}
+                {{^lastSyncTime}}
+                    null
+                {{/lastSyncTime}}
+            </td>
+            <td>
+                {{#paidOrFreeOnWeekend}}
+                    {{.}}
+                {{/paidOrFreeOnWeekend}}
+                {{^paidOrFreeOnWeekend}}
+                    null
+                {{/paidOrFreeOnWeekend}}
+            </td>
+            <td>
+                {{#paidOrFreeOnHoliday}}
+                    {{.}}
+                {{/paidOrFreeOnHoliday}}
+                {{^paidOrFreeOnHoliday}}
+                    null
+                {{/paidOrFreeOnHoliday}}
+            </td>
+            <td>
+                {{#subscribePrice}}
+                    {{.}}
+                {{/subscribePrice}}
+                {{^subscribePrice}}
+                    null
+                {{/subscribePrice}}
+            </td>
+            <td>
+                {{#managementNumber}}
+                    {{.}}
+                {{/managementNumber}}
+                {{^managementNumber}}
+                    null
+                {{/managementNumber}}
+            </td>
+            <td>
+                {{#defaultParkingPrice}}
+                    {{.}}
+                {{/defaultParkingPrice}}
+                {{^defaultParkingPrice}}
+                    null
+                {{/defaultParkingPrice}}
+            </td>
+            <td>
+                {{#defaultParkingTime}}
+                    {{.}}
+                {{/defaultParkingTime}}
+                {{^defaultParkingTime}}
+                    null
+                {{/defaultParkingTime}}
+            </td>
+            <td>
+                {{#additionalParkingPrice}}
+                    {{.}}
+                {{/additionalParkingPrice}}
+                {{^additionalParkingPrice}}
+                    null
+                {{/additionalParkingPrice}}
+            </td>
+            <td>
+                {{#additionalParkingTime}}
+                    {{.}}
+                {{/additionalParkingTime}}
+                {{^additionalParkingTime}}
+                    null
+                {{/additionalParkingTime}}
+            </td>
+            <td>
+                {{#maxPriceOnDay}}
+                    {{.}}
+                {{/maxPriceOnDay}}
+                {{^maxPriceOnDay}}
+                    null
+                {{/maxPriceOnDay}}
+            </td>
+            <td>
+                {{#latitude}}
+                    {{.}}
+                {{/latitude}}
+                {{^latitude}}
+                    null
+                {{/latitude}}
+            </td>
+            <td>
+                {{#longitude}}
+                    {{.}}
+                {{/longitude}}
+                {{^longitude}}
+                    null
+                {{/longitude}}
+            </td>
+        </tr>
+    {{/data}}
+    </tbody>
+</table>
+
+{{>layouts/footer}}

@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
 
@@ -17,13 +18,12 @@ public class ParkingListController {
     @Autowired
     private ParkingService parkingService;
 
-    @GetMapping("list")
-    public String parkingList(Model model) {
-        List<Parking> parkingList = parkingService.getParkingList().subList(0,5);
-
-        log.info(parkingList.toString());
-
+    @GetMapping("list/{page}")
+    public String parkingList(@PathVariable int page, Model model) {
+        List<Parking> parkingList = parkingService.getParkingList(page);
         model.addAttribute("data", parkingList);
+        model.addAttribute("previousPage", parkingService.getPreviousPage(page));
+        model.addAttribute("nextPage", parkingService.getNextPage(page));
         return "parkingListPage";
     }
 }

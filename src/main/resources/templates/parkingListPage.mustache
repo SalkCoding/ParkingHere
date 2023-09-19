@@ -1,0 +1,167 @@
+{{>layouts/header}}
+
+<div class="table-responsive-lg">
+    <table class="table table-striped-columns table-hover align-middle">
+        <thead>
+        <tr>
+            <th scope="col">주차장 코드</th>
+            <th scope="col">주차장</th>
+            <th scope="col">주소</th>
+            <th scope="col">주차장 종류</th>
+            <th scope="col">운영구분</th>
+            <th scope="col">전화번호</th>
+            <th scope="col">주차현황 제공여부</th>
+            <th scope="col">총 주차면</th>
+            <th scope="col">유,무료 구분</th>
+            <th scope="col">월 정기권 금액</th>
+            <th scope="col">기본 주차 요금</th>
+            <th scope="col">기본 주차 시간(분 단위)</th>
+            <th scope="col">추가 단위 요금</th>
+            <th scope="col">추가 단위 시간(분 단위)</th>
+            <th scope="col">일 최대 요금</th>
+        </tr>
+        </thead>
+        <tbody>
+        {{#data}}
+            <tr>
+                <!-- Primary key라 무조건 값 있음-->
+                <td>{{code}}</td>
+                <td>
+                    {{#name}}
+                        {{.}}
+                    {{/name}}
+                    {{^name}}
+                        null
+                    {{/name}}
+                </td>
+                <td>
+                    {{#address}}
+                        {{.}}
+                    {{/address}}
+                    {{^address}}
+                        null
+                    {{/address}}
+                </td>
+                <td>
+                    {{#type}}
+                        {{.}}
+                    {{/type}}
+                    {{^type}}
+                        null
+                    {{/type}}
+                </td>
+                <td>
+                    {{#operateClassification}}
+                        {{.}}
+                    {{/operateClassification}}
+                    {{^operateClassification}}
+                        null
+                    {{/operateClassification}}
+                </td>
+                <td>
+                    {{#phoneNumber}}
+                        {{.}}
+                    {{/phoneNumber}}
+                    {{^phoneNumber}}
+                        null
+                    {{/phoneNumber}}
+                </td>
+                <td>
+                    {{#syncState}}
+                        {{.}}
+                    {{/syncState}}
+                    {{^syncState}}
+                        null
+                    {{/syncState}}
+                </td>
+                <td>
+                    {{#totalParkingSpot}}
+                        {{.}}
+                    {{/totalParkingSpot}}
+                    {{^totalParkingSpot}}
+                        null
+                    {{/totalParkingSpot}}
+                </td>
+                <td>
+                    {{#paidOrFree}}
+                        {{.}}
+                    {{/paidOrFree}}
+                    {{^paidOrFree}}
+                        null
+                    {{/paidOrFree}}
+                </td>
+                <td>
+                    {{#subscribePrice}}
+                        {{.}}
+                    {{/subscribePrice}}
+                    {{^subscribePrice}}
+                        null
+                    {{/subscribePrice}}
+                </td>
+                <td>
+                    {{#defaultParkingPrice}}
+                        {{.}}
+                    {{/defaultParkingPrice}}
+                    {{^defaultParkingPrice}}
+                        null
+                    {{/defaultParkingPrice}}
+                </td>
+                <td>
+                    {{#defaultParkingTime}}
+                        {{.}}
+                    {{/defaultParkingTime}}
+                    {{^defaultParkingTime}}
+                        null
+                    {{/defaultParkingTime}}
+                </td>
+                <td>
+                    {{#additionalParkingPrice}}
+                        {{.}}
+                    {{/additionalParkingPrice}}
+                    {{^additionalParkingPrice}}
+                        null
+                    {{/additionalParkingPrice}}
+                </td>
+                <td>
+                    {{#additionalParkingTime}}
+                        {{.}}
+                    {{/additionalParkingTime}}
+                    {{^additionalParkingTime}}
+                        null
+                    {{/additionalParkingTime}}
+                </td>
+                <td>
+                    {{#maxPriceOnDay}}
+                        {{.}}
+                    {{/maxPriceOnDay}}
+                    {{^maxPriceOnDay}}
+                        null
+                    {{/maxPriceOnDay}}
+                </td>
+            </tr>
+        {{/data}}
+        </tbody>
+    </table>
+</div>
+
+<div>
+    {{#previousPage}}
+        <a href="/list/{{previousPage}}" style="text-decoration: none">
+            <button type="button" class="btn btn-primary" style="margin-left: 5px">이전 페이지</button>
+        </a>
+    {{/previousPage}}
+    {{^previousPage}}
+        <button type="button" class="btn btn-secondary disabled" style="margin-left: 5px">이전 페이지</button>
+    {{/previousPage}}
+
+    {{#nextPage}}
+        <a href="/list/{{nextPage}}" style="text-decoration: none">
+            <button type="button" class="btn btn-primary" style="float: right; margin-right: 5px">다음 페이지</button>
+        </a>
+    {{/nextPage}}
+    {{^nextPage}}
+        <button type="button" class="btn btn-secondary disabled" style="float: right; margin-right: 5px">다음 페이지</button>
+    {{/nextPage}}
+</div>
+
+{{>layouts/footer}}

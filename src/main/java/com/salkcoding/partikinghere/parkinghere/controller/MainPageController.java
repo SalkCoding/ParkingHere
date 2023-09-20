@@ -9,7 +9,7 @@ public class MainPageController {
 
     @GetMapping("")
     public String indexPage(Model model){
-        model.addAttribute("location","경기도 수원시 고색동 대원아파트");
+        model.addAttribute("location","서울");
         return "welcomePage";
     }
 

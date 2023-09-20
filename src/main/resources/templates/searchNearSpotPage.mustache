@@ -1,3 +1,23 @@
-{{layouts/header}}
+{{>layouts/header}}
 
-{{layouts/footer}}
+<!--
+http://data.seoul.go.kr/dataList/OA-21709/S/1/datasetView.do
+
+http://openapi.seoul.go.kr:8088/6e6170497973616c31366a4f4e6c70/json/GetParkingInfo/1/5/02-15-060(구)
+
+json으로 주소 근처 주차장 데이터 반환
+
+총 주차자리 - 현재 주차량 = 남은 주차자리
+
+마커 -> google javascript api로 진행
+-->
+
+<form class="d-flex" role="search" method="post" action="/search">
+    <input class="form-control m-2" value="{{address}}" type="search" placeholder="주소" aria-label="Search" name="address">
+    <button style="white-space:nowrap;" class="btn btn-outline-secondary m-2" type="submit">주소 검색</button>
+    <button style="white-space:nowrap;" class="btn btn-outline-success m-2" type="button">정보 보기</button>
+</form>
+
+{{>map/googleMap}}
+
+{{>layouts/footer}}

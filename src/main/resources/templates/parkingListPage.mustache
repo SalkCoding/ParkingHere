@@ -1,9 +1,14 @@
 {{>layouts/header}}
 
+<style>
+    th, td {
+        white-space: nowrap;
+    }
+</style>
 <div class="table-responsive-lg">
     <table class="table table-striped-columns table-hover align-middle">
         <thead>
-        <tr>
+        <tr class="text-center">
             <th scope="col">주차장 코드</th>
             <th scope="col">주차장</th>
             <th scope="col">주소</th>
@@ -25,13 +30,13 @@
         {{#data}}
             <tr>
                 <!-- Primary key라 무조건 값 있음-->
-                <td>{{code}}</td>
+                <td class="text-center">{{code}}</td>
                 <td>
                     {{#name}}
                         {{.}}
                     {{/name}}
                     {{^name}}
-                        null
+                        -
                     {{/name}}
                 </td>
                 <td>
@@ -39,15 +44,15 @@
                         {{.}}
                     {{/address}}
                     {{^address}}
-                        null
+                        -
                     {{/address}}
                 </td>
-                <td>
+                <td class="text-center">
                     {{#type}}
                         {{.}}
                     {{/type}}
                     {{^type}}
-                        null
+                        -
                     {{/type}}
                 </td>
                 <td>
@@ -55,87 +60,87 @@
                         {{.}}
                     {{/operateClassification}}
                     {{^operateClassification}}
-                        null
+                        -
                     {{/operateClassification}}
                 </td>
-                <td>
+                <td class="text-center">
                     {{#phoneNumber}}
                         {{.}}
                     {{/phoneNumber}}
                     {{^phoneNumber}}
-                        null
+                        -
                     {{/phoneNumber}}
                 </td>
-                <td>
+                <td class="text-center">
                     {{#syncState}}
                         {{.}}
                     {{/syncState}}
                     {{^syncState}}
-                        null
+                        -
                     {{/syncState}}
                 </td>
-                <td>
+                <td class="text-center">
                     {{#totalParkingSpot}}
                         {{.}}
                     {{/totalParkingSpot}}
                     {{^totalParkingSpot}}
-                        null
+                        -
                     {{/totalParkingSpot}}
                 </td>
-                <td>
+                <td class="text-center">
                     {{#paidOrFree}}
                         {{.}}
                     {{/paidOrFree}}
                     {{^paidOrFree}}
-                        null
+                        -
                     {{/paidOrFree}}
                 </td>
-                <td>
+                <td class="text-center">
                     {{#subscribePrice}}
                         {{.}}
                     {{/subscribePrice}}
                     {{^subscribePrice}}
-                        null
+                        -
                     {{/subscribePrice}}
                 </td>
-                <td>
+                <td class="text-center">
                     {{#defaultParkingPrice}}
                         {{.}}
                     {{/defaultParkingPrice}}
                     {{^defaultParkingPrice}}
-                        null
+                        -
                     {{/defaultParkingPrice}}
                 </td>
-                <td>
+                <td class="text-center">
                     {{#defaultParkingTime}}
                         {{.}}
                     {{/defaultParkingTime}}
                     {{^defaultParkingTime}}
-                        null
+                        -
                     {{/defaultParkingTime}}
                 </td>
-                <td>
+                <td class="text-center">
                     {{#additionalParkingPrice}}
                         {{.}}
                     {{/additionalParkingPrice}}
                     {{^additionalParkingPrice}}
-                        null
+                        -
                     {{/additionalParkingPrice}}
                 </td>
-                <td>
+                <td class="text-center">
                     {{#additionalParkingTime}}
                         {{.}}
                     {{/additionalParkingTime}}
                     {{^additionalParkingTime}}
-                        null
+                        -
                     {{/additionalParkingTime}}
                 </td>
-                <td>
+                <td class="text-center">
                     {{#maxPriceOnDay}}
                         {{.}}
                     {{/maxPriceOnDay}}
                     {{^maxPriceOnDay}}
-                        null
+                        -
                     {{/maxPriceOnDay}}
                 </td>
             </tr>

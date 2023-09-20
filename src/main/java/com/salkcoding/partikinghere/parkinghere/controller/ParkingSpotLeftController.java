@@ -8,6 +8,6 @@ public class ParkingSpotLeftController {
 
     @GetMapping("pleft")
     public String spotLeft(){
-        return "";
+        return "spotLeftPage";
     }
 }

@@ -30,118 +30,118 @@
         {{#data}}
             <tr>
                 <!-- Primary key라 무조건 값 있음-->
-                <td class="text-center">{{code}}</td>
+                <td class="text-center">{{parking_code}}</td>
                 <td>
-                    {{#name}}
+                    {{#parking_name}}
                         {{.}}
-                    {{/name}}
-                    {{^name}}
+                    {{/parking_name}}
+                    {{^parking_name}}
                         -
-                    {{/name}}
-                </td>
-                <td>
-                    {{#address}}
-                        {{.}}
-                    {{/address}}
-                    {{^address}}
-                        -
-                    {{/address}}
-                </td>
-                <td class="text-center">
-                    {{#type}}
-                        {{.}}
-                    {{/type}}
-                    {{^type}}
-                        -
-                    {{/type}}
+                    {{/parking_name}}
                 </td>
                 <td>
-                    {{#operateClassification}}
+                    {{#addr}}
                         {{.}}
-                    {{/operateClassification}}
-                    {{^operateClassification}}
+                    {{/addr}}
+                    {{^addr}}
                         -
-                    {{/operateClassification}}
+                    {{/addr}}
                 </td>
                 <td class="text-center">
-                    {{#phoneNumber}}
+                    {{#parking_type_nm}}
                         {{.}}
-                    {{/phoneNumber}}
-                    {{^phoneNumber}}
+                    {{/parking_type_nm}}
+                    {{^parking_type_nm}}
                         -
-                    {{/phoneNumber}}
+                    {{/parking_type_nm}}
+                </td>
+                <td>
+                    {{#operation_rule_nm}}
+                        {{.}}
+                    {{/operation_rule_nm}}
+                    {{^operation_rule_nm}}
+                        -
+                    {{/operation_rule_nm}}
                 </td>
                 <td class="text-center">
-                    {{#syncState}}
+                    {{#tel}}
                         {{.}}
-                    {{/syncState}}
-                    {{^syncState}}
+                    {{/tel}}
+                    {{^tel}}
                         -
-                    {{/syncState}}
+                    {{/tel}}
                 </td>
                 <td class="text-center">
-                    {{#totalParkingSpot}}
+                    {{#que_status_nm}}
                         {{.}}
-                    {{/totalParkingSpot}}
-                    {{^totalParkingSpot}}
+                    {{/que_status_nm}}
+                    {{^que_status_nm}}
                         -
-                    {{/totalParkingSpot}}
+                    {{/que_status_nm}}
                 </td>
                 <td class="text-center">
-                    {{#paidOrFree}}
+                    {{#capacity}}
                         {{.}}
-                    {{/paidOrFree}}
-                    {{^paidOrFree}}
+                    {{/capacity}}
+                    {{^capacity}}
                         -
-                    {{/paidOrFree}}
+                    {{/capacity}}
                 </td>
                 <td class="text-center">
-                    {{#subscribePrice}}
+                    {{#pay_nm}}
                         {{.}}
-                    {{/subscribePrice}}
-                    {{^subscribePrice}}
+                    {{/pay_nm}}
+                    {{^pay_nm}}
                         -
-                    {{/subscribePrice}}
+                    {{/pay_nm}}
                 </td>
                 <td class="text-center">
-                    {{#defaultParkingPrice}}
+                    {{#fulltime_monthly}}
                         {{.}}
-                    {{/defaultParkingPrice}}
-                    {{^defaultParkingPrice}}
+                    {{/fulltime_monthly}}
+                    {{^fulltime_monthly}}
                         -
-                    {{/defaultParkingPrice}}
+                    {{/fulltime_monthly}}
                 </td>
                 <td class="text-center">
-                    {{#defaultParkingTime}}
+                    {{#rates}}
                         {{.}}
-                    {{/defaultParkingTime}}
-                    {{^defaultParkingTime}}
+                    {{/rates}}
+                    {{^rates}}
                         -
-                    {{/defaultParkingTime}}
+                    {{/rates}}
                 </td>
                 <td class="text-center">
-                    {{#additionalParkingPrice}}
+                    {{#time_rate}}
                         {{.}}
-                    {{/additionalParkingPrice}}
-                    {{^additionalParkingPrice}}
+                    {{/time_rate}}
+                    {{^time_rate}}
                         -
-                    {{/additionalParkingPrice}}
+                    {{/time_rate}}
                 </td>
                 <td class="text-center">
-                    {{#additionalParkingTime}}
+                    {{#add_rates}}
                         {{.}}
-                    {{/additionalParkingTime}}
-                    {{^additionalParkingTime}}
+                    {{/add_rates}}
+                    {{^add_rates}}
                         -
-                    {{/additionalParkingTime}}
+                    {{/add_rates}}
                 </td>
                 <td class="text-center">
-                    {{#maxPriceOnDay}}
+                    {{#add_time_rate}}
                         {{.}}
-                    {{/maxPriceOnDay}}
-                    {{^maxPriceOnDay}}
+                    {{/add_time_rate}}
+                    {{^add_time_rate}}
                         -
-                    {{/maxPriceOnDay}}
+                    {{/add_time_rate}}
+                </td>
+                <td class="text-center">
+                    {{#day_maximum}}
+                        {{.}}
+                    {{/day_maximum}}
+                    {{^day_maximum}}
+                        -
+                    {{/day_maximum}}
                 </td>
             </tr>
         {{/data}}

@@ -1,9 +1,9 @@
 {{>layouts/header}}
 
-<form class="d-flex" role="search" method="post" action="/search">
+<form class="d-flex" role="search" method="post">
     <input class="form-control m-2" value="{{address}}" type="search" placeholder="주소" aria-label="Search" name="address">
-    <button style="white-space:nowrap;" class="btn btn-outline-secondary m-2" type="submit">주소 검색</button>
-    <button style="white-space:nowrap;" class="btn btn-outline-success m-2" type="button">정보 보기</button>
+    <button style="white-space:nowrap;" class="btn btn-outline-secondary m-2" type="submit" formaction="/search">주소 검색</button>
+    <button style="white-space:nowrap;" class="btn btn-outline-success m-2" type="submit" formaction="/list">정보 보기</button>
 </form>
 
 {{>map/googleMap}}

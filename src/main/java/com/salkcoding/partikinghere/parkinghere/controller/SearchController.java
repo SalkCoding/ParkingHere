@@ -12,6 +12,13 @@ import java.nio.charset.StandardCharsets;
 @Controller
 public class SearchController {
 
+    @GetMapping("")
+    public String mainIndex(Model model) {
+        model.addAttribute("location", "서울시 공영 주차장");
+        model.addAttribute("address", "서울시 공영 주차장");
+        return "searchNearSpotPage";
+    }
+
     @GetMapping("search")
     public String search(Model model) {
         model.addAttribute("location", "서울시 공영 주차장");

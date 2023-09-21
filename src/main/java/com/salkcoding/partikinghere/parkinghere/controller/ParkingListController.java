@@ -6,9 +6,10 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.*;
 
+import java.net.URLDecoder;
+import java.nio.charset.StandardCharsets;
 import java.util.List;
 
 @Slf4j
@@ -24,6 +25,17 @@ public class ParkingListController {
         model.addAttribute("data", parkingList);
         model.addAttribute("previousPage", parkingService.getPreviousPage(page));
         model.addAttribute("nextPage", parkingService.getNextPage(page));
+        return "parkingListPage";
+    }
+
+    @PostMapping("/list")
+    public String parkingListBySearchAddr(@RequestBody String input, Model model) {
+        String decoded = URLDecoder.decode(input.split("=")[1], StandardCharsets.UTF_8);
+        decoded = decoded.replaceAll(" ", "%");
+        List<Parking> parkingList = parkingService.getParkingListByInput(decoded);
+        model.addAttribute("data", parkingList);
+        model.addAttribute("previousPage", null);
+        model.addAttribute("nextPage", null);
         return "parkingListPage";
     }
 }

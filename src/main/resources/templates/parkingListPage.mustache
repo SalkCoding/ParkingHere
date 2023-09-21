@@ -28,16 +28,16 @@
         </thead>
         <tbody>
         {{#data}}
-            <tr>
+            <tr onclick="window.location.href='/pleft/{{parkingCode}}'" style="cursor: pointer">
                 <!-- Primary key라 무조건 값 있음-->
-                <td class="text-center">{{parking_code}}</td>
+                <td class="text-center">{{parkingCode}}</td>
                 <td>
-                    {{#parking_name}}
+                    {{#parkingName}}
                         {{.}}
-                    {{/parking_name}}
-                    {{^parking_name}}
+                    {{/parkingName}}
+                    {{^parkingName}}
                         -
-                    {{/parking_name}}
+                    {{/parkingName}}
                 </td>
                 <td>
                     {{#addr}}
@@ -48,20 +48,20 @@
                     {{/addr}}
                 </td>
                 <td class="text-center">
-                    {{#parking_type_nm}}
+                    {{#parkingTypeNm}}
                         {{.}}
-                    {{/parking_type_nm}}
-                    {{^parking_type_nm}}
+                    {{/parkingTypeNm}}
+                    {{^parkingTypeNm}}
                         -
-                    {{/parking_type_nm}}
+                    {{/parkingTypeNm}}
                 </td>
                 <td>
-                    {{#operation_rule_nm}}
+                    {{#operationRuleNm}}
                         {{.}}
-                    {{/operation_rule_nm}}
-                    {{^operation_rule_nm}}
+                    {{/operationRuleNm}}
+                    {{^operationRuleNm}}
                         -
-                    {{/operation_rule_nm}}
+                    {{/operationRuleNm}}
                 </td>
                 <td class="text-center">
                     {{#tel}}
@@ -72,12 +72,12 @@
                     {{/tel}}
                 </td>
                 <td class="text-center">
-                    {{#que_status_nm}}
+                    {{#queStatusNm}}
                         {{.}}
-                    {{/que_status_nm}}
-                    {{^que_status_nm}}
+                    {{/queStatusNm}}
+                    {{^queStatusNm}}
                         -
-                    {{/que_status_nm}}
+                    {{/queStatusNm}}
                 </td>
                 <td class="text-center">
                     {{#capacity}}
@@ -88,20 +88,20 @@
                     {{/capacity}}
                 </td>
                 <td class="text-center">
-                    {{#pay_nm}}
+                    {{#payNm}}
                         {{.}}
-                    {{/pay_nm}}
-                    {{^pay_nm}}
+                    {{/payNm}}
+                    {{^payNm}}
                         -
-                    {{/pay_nm}}
+                    {{/payNm}}
                 </td>
                 <td class="text-center">
-                    {{#fulltime_monthly}}
+                    {{#fulltimeMonthly}}
                         {{.}}
-                    {{/fulltime_monthly}}
-                    {{^fulltime_monthly}}
+                    {{/fulltimeMonthly}}
+                    {{^fulltimeMonthly}}
                         -
-                    {{/fulltime_monthly}}
+                    {{/fulltimeMonthly}}
                 </td>
                 <td class="text-center">
                     {{#rates}}
@@ -112,38 +112,43 @@
                     {{/rates}}
                 </td>
                 <td class="text-center">
-                    {{#time_rate}}
+                    {{#timeRate}}
                         {{.}}
-                    {{/time_rate}}
-                    {{^time_rate}}
+                    {{/timeRate}}
+                    {{^timeRate}}
                         -
-                    {{/time_rate}}
+                    {{/timeRate}}
                 </td>
                 <td class="text-center">
-                    {{#add_rates}}
+                    {{#addRates}}
                         {{.}}
-                    {{/add_rates}}
-                    {{^add_rates}}
+                    {{/addRates}}
+                    {{^addRates}}
                         -
-                    {{/add_rates}}
+                    {{/addRates}}
                 </td>
                 <td class="text-center">
-                    {{#add_time_rate}}
+                    {{#addTimeRate}}
                         {{.}}
-                    {{/add_time_rate}}
-                    {{^add_time_rate}}
+                    {{/addTimeRate}}
+                    {{^addTimeRate}}
                         -
-                    {{/add_time_rate}}
+                    {{/addTimeRate}}
                 </td>
                 <td class="text-center">
-                    {{#day_maximum}}
+                    {{#dayMaximum}}
                         {{.}}
-                    {{/day_maximum}}
-                    {{^day_maximum}}
+                    {{/dayMaximum}}
+                    {{^dayMaximum}}
                         -
-                    {{/day_maximum}}
+                    {{/dayMaximum}}
                 </td>
             </tr>
+        {{/data}}
+        {{^data}}
+            <td class="text-center">
+                검색 결과가 없습니다.
+            </td>
         {{/data}}
         </tbody>
     </table>

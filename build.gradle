@@ -24,7 +24,8 @@ repositories {
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter'
     runtimeOnly 'com.mysql:mysql-connector-j'
-
+    implementation 'com.google.maps:google-maps-services:2.2.0'
+    implementation 'org.slf4j:slf4j-simple:1.7.25'
     implementation 'org.springframework.boot:spring-boot-starter-jdbc'
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter-actuator'

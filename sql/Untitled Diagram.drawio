@@ -1,0 +1,37 @@
+<mxfile host="app.diagrams.net" modified="2023-09-21T02:06:19.889Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.6 Safari/605.1.15" etag="r-rRiV7Xpj_0ZXm-9JKk" version="21.8.0" type="github">
+  <diagram name="Page-1" id="eQJryWVY2TALe1gV1yyO">
+    <mxGraphModel dx="1194" dy="797" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="WqG1rHplCrVIxxXKtkab-1" value="User" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="20" y="190" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="WqG1rHplCrVIxxXKtkab-2" value="View" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="120" y="120" width="200" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="WqG1rHplCrVIxxXKtkab-5" value="parkingListPage" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="WqG1rHplCrVIxxXKtkab-2">
+          <mxGeometry x="40" y="140" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="WqG1rHplCrVIxxXKtkab-4" value="SpotLeftPage" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="WqG1rHplCrVIxxXKtkab-2">
+          <mxGeometry x="45" y="90" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="WqG1rHplCrVIxxXKtkab-3" value="welcomePage" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="WqG1rHplCrVIxxXKtkab-2">
+          <mxGeometry x="45" y="40" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="WqG1rHplCrVIxxXKtkab-7" value="" style="shape=flexArrow;endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="70" y="220" as="sourcePoint" />
+            <mxPoint x="110" y="220" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="WqG1rHplCrVIxxXKtkab-8" value="" style="shape=flexArrow;endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="340" y="219.5" as="sourcePoint" />
+            <mxPoint x="410" y="219.5" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
+import java.net.URLDecoder;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
 
@@ -38,15 +39,17 @@ public class SearchController {
 
     @GetMapping("search/{address}")
     public String search(Model model, @PathVariable String address) {
-        model.addAttribute("location", address);
-        model.addAttribute("address", address);
+        String decoded = URLDecoder.decode(address, StandardCharsets.UTF_8);
+        model.addAttribute("location", decoded);
+        model.addAttribute("address", decoded);
 
         model.addAttribute("syncDate", parkingService.getSyncDate().toString());
         return "searchNearSpotPage";
     }
 
     @PostMapping("search")
-    public String inputAddress(Model model, @RequestBody String address) {
+    public String inputAddress(Model model, @RequestBody String body) {
+        String address = body.split("=")[1];
         model.addAttribute("address", address);
         model.addAttribute("location", address);
         String encoded = URLEncoder.encode(address, StandardCharsets.UTF_8).replaceAll("\\+", " ");

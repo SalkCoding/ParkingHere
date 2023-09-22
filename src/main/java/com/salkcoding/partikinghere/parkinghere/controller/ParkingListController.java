@@ -25,6 +25,8 @@ public class ParkingListController {
         model.addAttribute("data", parkingList);
         model.addAttribute("previousPage", parkingService.getPreviousPage(page));
         model.addAttribute("nextPage", parkingService.getNextPage(page));
+
+        model.addAttribute("syncDate", parkingService.getSyncDate().toString());
         return "parkingListPage";
     }
 
@@ -36,6 +38,8 @@ public class ParkingListController {
         model.addAttribute("data", parkingList);
         model.addAttribute("previousPage", null);
         model.addAttribute("nextPage", null);
+
+        model.addAttribute("syncDate", parkingService.getSyncDate().toString());
         return "parkingListPage";
     }
 }

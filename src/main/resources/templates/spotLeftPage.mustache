@@ -1,9 +1,168 @@
 {{>layouts/header}}
 
-<form class="d-flex" role="search" method="post" action="/search">
-    <input class="form-control m-2" value="{{address}}" type="search" placeholder="주소" aria-label="Search" name="address">
-    <button class="btn btn-outline-success m-2" type="submit">Search</button>
-</form>
+<style>
+    th, td {
+        white-space: nowrap;
+    }
+</style>
+<div class="table-responsive-lg">
+    <table class="table table-striped-columns table-hover align-middle">
+        <thead>
+        <tr class="text-center">
+            <th scope="col">주차장 코드</th>
+            <th scope="col">주차장</th>
+            <th scope="col">주소</th>
+            <th scope="col">주차현황 제공여부</th>
+            <th scope="col">총 주차면</th>
+            <th scope="col">남은 주차면</th>
+            <th scope="col">주차장 종류</th>
+            <th scope="col">운영구분</th>
+            <th scope="col">전화번호</th>
+            <th scope="col">유,무료 구분</th>
+            <th scope="col">월 정기권 금액</th>
+            <th scope="col">기본 주차 요금</th>
+            <th scope="col">기본 주차 시간</th>
+            <th scope="col">추가 단위 요금</th>
+            <th scope="col">추가 단위 시간</th>
+            <th scope="col">일 최대 요금</th>
+        </tr>
+        </thead>
+        <tbody>
+        {{#data}}
+            <tr>
+                <!-- Primary key라 무조건 값 있음-->
+                <td class="text-center">{{parkingCode}}</td>
+                <td>
+                    {{#parkingName}}
+                        {{.}}
+                    {{/parkingName}}
+                    {{^parkingName}}
+                        -
+                    {{/parkingName}}
+                </td>
+                <td>
+                    {{#addr}}
+                        {{.}}
+                    {{/addr}}
+                    {{^addr}}
+                        -
+                    {{/addr}}
+                </td>
+                <td class="text-center">
+                    {{#queStatusNm}}
+                        {{.}}
+                    {{/queStatusNm}}
+                    {{^queStatusNm}}
+                        -
+                    {{/queStatusNm}}
+                </td>
+                <td class="text-center">
+                    {{#capacity}}
+                        {{.}}
+                    {{/capacity}}
+                    {{^capacity}}
+                        -
+                    {{/capacity}}
+                </td>
+                <td class="text-center">
+                    {{#remain_spot}}
+                        {{.}}
+                    {{/remain_spot}}
+                    {{^remain_spot}}
+                        -
+                    {{/remain_spot}}
+                </td>
+                <td class="text-center">
+                    {{#parkingTypeNm}}
+                        {{.}}
+                    {{/parkingTypeNm}}
+                    {{^parkingTypeNm}}
+                        -
+                    {{/parkingTypeNm}}
+                </td>
+                <td>
+                    {{#operationRuleNm}}
+                        {{.}}
+                    {{/operationRuleNm}}
+                    {{^operationRuleNm}}
+                        -
+                    {{/operationRuleNm}}
+                </td>
+                <td class="text-center">
+                    {{#tel}}
+                        {{.}}
+                    {{/tel}}
+                    {{^tel}}
+                        -
+                    {{/tel}}
+                </td>
+
+                <td class="text-center">
+                    {{#payNm}}
+                        {{.}}
+                    {{/payNm}}
+                    {{^payNm}}
+                        -
+                    {{/payNm}}
+                </td>
+                <td class="text-center">
+                    {{#fulltimeMonthly}}
+                        {{.}}원
+                    {{/fulltimeMonthly}}
+                    {{^fulltimeMonthly}}
+                        -
+                    {{/fulltimeMonthly}}
+                </td>
+                <td class="text-center">
+                    {{#rates}}
+                        {{.}}원
+                    {{/rates}}
+                    {{^rates}}
+                        -
+                    {{/rates}}
+                </td>
+                <td class="text-center">
+                    {{#timeRate}}
+                        {{.}}분
+                    {{/timeRate}}
+                    {{^timeRate}}
+                        -
+                    {{/timeRate}}
+                </td>
+                <td class="text-center">
+                    {{#addRates}}
+                        {{.}}원
+                    {{/addRates}}
+                    {{^addRates}}
+                        -
+                    {{/addRates}}
+                </td>
+                <td class="text-center">
+                    {{#addTimeRate}}
+                        {{.}}분
+                    {{/addTimeRate}}
+                    {{^addTimeRate}}
+                        -
+                    {{/addTimeRate}}
+                </td>
+                <td class="text-center">
+                    {{#dayMaximum}}
+                        {{.}}원
+                    {{/dayMaximum}}
+                    {{^dayMaximum}}
+                        -
+                    {{/dayMaximum}}
+                </td>
+            </tr>
+        {{/data}}
+        {{^data}}
+            <td class="text-center">
+                검색 결과가 없습니다.
+            </td>
+        {{/data}}
+        </tbody>
+    </table>
+</div>
 
 {{>map/googleMap}}
 

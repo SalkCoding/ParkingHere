@@ -18,8 +18,17 @@ public class ParkingSpotLeftController {
     @GetMapping("pleft/{code}")
     public String spotLeftByCode(@PathVariable Long code, Model model) {
         Parking parking = parkingService.getParkingInfoByCode(code);
+        model.addAttribute("data", parking);
+        model.addAttribute("remain_spot",
+                (parking.getCapacity() != null && parking.getCurParking() != null)
+                        ? parking.getCapacity() - parking.getCurParking()
+                        : null
+        );
+
         model.addAttribute("location", parking.getParkingName());
         model.addAttribute("address", parking.getAddr());
+
+        model.addAttribute("syncDate", parkingService.getSyncDate().toString());
         return "spotLeftPage";
     }
 

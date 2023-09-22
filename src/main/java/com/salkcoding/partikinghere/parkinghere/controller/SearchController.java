@@ -1,10 +1,13 @@
 package com.salkcoding.partikinghere.parkinghere.controller;
 
+import com.salkcoding.partikinghere.parkinghere.service.ParkingService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
@@ -12,10 +15,15 @@ import java.nio.charset.StandardCharsets;
 @Controller
 public class SearchController {
 
+    @Autowired
+    private ParkingService parkingService;
+
     @GetMapping("")
     public String mainIndex(Model model) {
         model.addAttribute("location", "서울시 공영 주차장");
         model.addAttribute("address", "서울시 공영 주차장");
+
+        model.addAttribute("syncDate", parkingService.getSyncDate().toString());
         return "searchNearSpotPage";
     }
 
@@ -23,6 +31,8 @@ public class SearchController {
     public String search(Model model) {
         model.addAttribute("location", "서울시 공영 주차장");
         model.addAttribute("address", "서울시 공영 주차장");
+
+        model.addAttribute("syncDate", parkingService.getSyncDate().toString());
         return "searchNearSpotPage";
     }
 
@@ -30,14 +40,18 @@ public class SearchController {
     public String search(Model model, @PathVariable String address) {
         model.addAttribute("location", address);
         model.addAttribute("address", address);
+
+        model.addAttribute("syncDate", parkingService.getSyncDate().toString());
         return "searchNearSpotPage";
     }
 
     @PostMapping("search")
-    public String inputAddress(Model model, String address) {
+    public String inputAddress(Model model, @RequestBody String address) {
         model.addAttribute("address", address);
         model.addAttribute("location", address);
         String encoded = URLEncoder.encode(address, StandardCharsets.UTF_8).replaceAll("\\+", " ");
+
+        model.addAttribute("syncDate", parkingService.getSyncDate().toString());
         return "redirect:/search/" + encoded;
     }
 }

@@ -9,13 +9,13 @@ import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 @EnableAsync
 public class AsyncConfig {
 
-    @Bean(name = "threadPoolTaskExecutor")
+    @Bean
     public ThreadPoolTaskExecutor threadPoolTaskExecutor() {
         ThreadPoolTaskExecutor taskExecutor = new ThreadPoolTaskExecutor();
         taskExecutor.setCorePoolSize(5);
         taskExecutor.setMaxPoolSize(30);
         taskExecutor.setQueueCapacity(10);
-        taskExecutor.setThreadNamePrefix("Executor-");
+        taskExecutor.setThreadNamePrefix("AsyncPageUpdater-");
         taskExecutor.initialize();
 
         return taskExecutor;
